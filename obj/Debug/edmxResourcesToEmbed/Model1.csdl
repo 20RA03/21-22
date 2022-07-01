@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mydatabase1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Автомобили">
+    <Key>
+      <PropertyRef Name="Государственный_номер" />
+    </Key>
+    <Property Name="Государственный_номер" Type="Int32" Nullable="false" />
+    <Property Name="Марка_автомобиля" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Код_группы" Type="Int32" />
+    <Property Name="Первоначальная_стоимость" Type="Int32" />
+    <Property Name="Дата_ввода_в_эксплуатацию" Type="DateTime" Precision="0" />
+    <Property Name="Пробег_на_начало_года" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Стоимость_автомобиля_на_начало_года" Type="Int32" />
+    <Property Name="Табельный_номер_материально_ответственного_лица" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Группа_автомобилей">
+    <Key>
+      <PropertyRef Name="Код_группы" />
+    </Key>
+    <Property Name="Код_группы" Type="Int32" Nullable="false" />
+    <Property Name="Наименование_группы" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Норма_амортизации" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Месячные_пробеги">
+    <Key>
+      <PropertyRef Name="Государственный_номер" />
+    </Key>
+    <Property Name="Государственный_номер" Type="Int32" Nullable="false" />
+    <Property Name="Пробег" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Номер_месяца" Type="Int32" />
+  </EntityType>
+  <EntityType Name="МОЛ">
+    <Key>
+      <PropertyRef Name="Табельный_номер" />
+    </Key>
+    <Property Name="Табельный_номер" Type="Int32" Nullable="false" />
+    <Property Name="ФИО" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="телефон" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="mydatabase1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Автомобили" EntityType="Self.Автомобили" />
+    <EntitySet Name="Группа_автомобилей" EntityType="Self.Группа_автомобилей" />
+    <EntitySet Name="Месячные_пробеги" EntityType="Self.Месячные_пробеги" />
+    <EntitySet Name="МОЛ" EntityType="Self.МОЛ" />
+  </EntityContainer>
+</Schema>

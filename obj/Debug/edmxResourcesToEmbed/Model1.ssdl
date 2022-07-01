@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище mydatabase1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Автомобили">
+    <Key>
+      <PropertyRef Name="Государственный номер" />
+    </Key>
+    <Property Name="Государственный номер" Type="int" Nullable="false" />
+    <Property Name="Марка автомобиля" Type="nvarchar" MaxLength="50" />
+    <Property Name="Код группы" Type="int" />
+    <Property Name="Первоначальная стоимость" Type="int" />
+    <Property Name="Дата ввода в эксплуатацию" Type="date" />
+    <Property Name="Пробег на начало года" Type="nvarchar" MaxLength="50" />
+    <Property Name="Стоимость автомобиля на начало года" Type="int" />
+    <Property Name="Табельный номер материально ответственного лица" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Группа автомобилей">
+    <Key>
+      <PropertyRef Name="Код группы" />
+    </Key>
+    <Property Name="Код группы" Type="int" Nullable="false" />
+    <Property Name="Наименование группы" Type="nvarchar" MaxLength="50" />
+    <Property Name="Норма амортизации" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Месячные пробеги">
+    <Key>
+      <PropertyRef Name="Государственный номер" />
+    </Key>
+    <Property Name="Государственный номер" Type="int" Nullable="false" />
+    <Property Name="Пробег" Type="nvarchar" MaxLength="50" />
+    <Property Name="Номер месяца" Type="int" />
+  </EntityType>
+  <EntityType Name="МОЛ">
+    <Key>
+      <PropertyRef Name="Табельный номер" />
+    </Key>
+    <Property Name="Табельный номер" Type="int" Nullable="false" />
+    <Property Name="ФИО" Type="nvarchar(max)" />
+    <Property Name="телефон" Type="int" />
+  </EntityType>
+  <EntityContainer Name="Хранилище mydatabase1ModelContainer">
+    <EntitySet Name="Автомобили" EntityType="Self.Автомобили" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Группа автомобилей" EntityType="Self.Группа автомобилей" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Месячные пробеги" EntityType="Self.Месячные пробеги" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="МОЛ" EntityType="Self.МОЛ" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

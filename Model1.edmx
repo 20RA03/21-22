@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище mydatabase1Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Автомобили">
+          <Key>
+            <PropertyRef Name="Государственный номер" />
+          </Key>
+          <Property Name="Государственный номер" Type="int" Nullable="false" />
+          <Property Name="Марка автомобиля" Type="nvarchar" MaxLength="50" />
+          <Property Name="Код группы" Type="int" />
+          <Property Name="Первоначальная стоимость" Type="int" />
+          <Property Name="Дата ввода в эксплуатацию" Type="date" />
+          <Property Name="Пробег на начало года" Type="nvarchar" MaxLength="50" />
+          <Property Name="Стоимость автомобиля на начало года" Type="int" />
+          <Property Name="Табельный номер материально ответственного лица" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Группа автомобилей">
+          <Key>
+            <PropertyRef Name="Код группы" />
+          </Key>
+          <Property Name="Код группы" Type="int" Nullable="false" />
+          <Property Name="Наименование группы" Type="nvarchar" MaxLength="50" />
+          <Property Name="Норма амортизации" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Месячные пробеги">
+          <Key>
+            <PropertyRef Name="Государственный номер" />
+          </Key>
+          <Property Name="Государственный номер" Type="int" Nullable="false" />
+          <Property Name="Пробег" Type="nvarchar" MaxLength="50" />
+          <Property Name="Номер месяца" Type="int" />
+        </EntityType>
+        <EntityType Name="МОЛ">
+          <Key>
+            <PropertyRef Name="Табельный номер" />
+          </Key>
+          <Property Name="Табельный номер" Type="int" Nullable="false" />
+          <Property Name="ФИО" Type="nvarchar(max)" />
+          <Property Name="телефон" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Хранилище mydatabase1ModelContainer">
+          <EntitySet Name="Автомобили" EntityType="Self.Автомобили" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Группа автомобилей" EntityType="Self.Группа автомобилей" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Месячные пробеги" EntityType="Self.Месячные пробеги" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="МОЛ" EntityType="Self.МОЛ" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mydatabase1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Автомобили">
+          <Key>
+            <PropertyRef Name="Государственный_номер" />
+          </Key>
+          <Property Name="Государственный_номер" Type="Int32" Nullable="false" />
+          <Property Name="Марка_автомобиля" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Код_группы" Type="Int32" />
+          <Property Name="Первоначальная_стоимость" Type="Int32" />
+          <Property Name="Дата_ввода_в_эксплуатацию" Type="DateTime" Precision="0" />
+          <Property Name="Пробег_на_начало_года" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Стоимость_автомобиля_на_начало_года" Type="Int32" />
+          <Property Name="Табельный_номер_материально_ответственного_лица" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Группа_автомобилей">
+          <Key>
+            <PropertyRef Name="Код_группы" />
+          </Key>
+          <Property Name="Код_группы" Type="Int32" Nullable="false" />
+          <Property Name="Наименование_группы" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Норма_амортизации" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Месячные_пробеги">
+          <Key>
+            <PropertyRef Name="Государственный_номер" />
+          </Key>
+          <Property Name="Государственный_номер" Type="Int32" Nullable="false" />
+          <Property Name="Пробег" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Номер_месяца" Type="Int32" />
+        </EntityType>
+        <EntityType Name="МОЛ">
+          <Key>
+            <PropertyRef Name="Табельный_номер" />
+          </Key>
+          <Property Name="Табельный_номер" Type="Int32" Nullable="false" />
+          <Property Name="ФИО" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="телефон" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="mydatabase1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Автомобили" EntityType="Self.Автомобили" />
+          <EntitySet Name="Группа_автомобилей" EntityType="Self.Группа_автомобилей" />
+          <EntitySet Name="Месячные_пробеги" EntityType="Self.Месячные_пробеги" />
+          <EntitySet Name="МОЛ" EntityType="Self.МОЛ" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище mydatabase1ModelContainer" CdmEntityContainer="mydatabase1Entities">
+          <EntitySetMapping Name="Автомобили">
+            <EntityTypeMapping TypeName="mydatabase1Model.Автомобили">
+              <MappingFragment StoreEntitySet="Автомобили">
+                <ScalarProperty Name="Государственный_номер" ColumnName="Государственный номер" />
+                <ScalarProperty Name="Марка_автомобиля" ColumnName="Марка автомобиля" />
+                <ScalarProperty Name="Код_группы" ColumnName="Код группы" />
+                <ScalarProperty Name="Первоначальная_стоимость" ColumnName="Первоначальная стоимость" />
+                <ScalarProperty Name="Дата_ввода_в_эксплуатацию" ColumnName="Дата ввода в эксплуатацию" />
+                <ScalarProperty Name="Пробег_на_начало_года" ColumnName="Пробег на начало года" />
+                <ScalarProperty Name="Стоимость_автомобиля_на_начало_года" ColumnName="Стоимость автомобиля на начало года" />
+                <ScalarProperty Name="Табельный_номер_материально_ответственного_лица" ColumnName="Табельный номер материально ответственного лица" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Группа_автомобилей">
+            <EntityTypeMapping TypeName="mydatabase1Model.Группа_автомобилей">
+              <MappingFragment StoreEntitySet="Группа автомобилей">
+                <ScalarProperty Name="Код_группы" ColumnName="Код группы" />
+                <ScalarProperty Name="Наименование_группы" ColumnName="Наименование группы" />
+                <ScalarProperty Name="Норма_амортизации" ColumnName="Норма амортизации" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Месячные_пробеги">
+            <EntityTypeMapping TypeName="mydatabase1Model.Месячные_пробеги">
+              <MappingFragment StoreEntitySet="Месячные пробеги">
+                <ScalarProperty Name="Государственный_номер" ColumnName="Государственный номер" />
+                <ScalarProperty Name="Пробег" ColumnName="Пробег" />
+                <ScalarProperty Name="Номер_месяца" ColumnName="Номер месяца" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="МОЛ">
+            <EntityTypeMapping TypeName="mydatabase1Model.МОЛ">
+              <MappingFragment StoreEntitySet="МОЛ">
+                <ScalarProperty Name="Табельный_номер" ColumnName="Табельный номер" />
+                <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+                <ScalarProperty Name="телефон" ColumnName="телефон" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

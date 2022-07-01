@@ -1,0 +1,46 @@
+﻿<Window x:Class="proga2122.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:proga2122"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Таблица1">
+                <Grid Background="#FFE5E5E5" Loaded="Window_Loaded">
+                    <DataGrid x:Name="grid1" Margin="0,0,0,90"/>
+                    <Button x:Name="a1" Content="добавить" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Click="a1_Click"/>
+                    <Button x:Name="a3" Content="удалить" HorizontalAlignment="Left" Margin="131,321,0,0" VerticalAlignment="Top" Click="a3_Click"/>
+                    <Button x:Name="a2" Content="изменить" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Click="a2_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Таблица2">
+                <Grid Background="#FFE5E5E5" Loaded="Window_Loaded2">
+                    <DataGrid x:Name="grid2" Margin="0,0,0,90"/>
+                    <Button x:Name="b1" Content="добавить" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Click="b1_Click"/>
+                    <Button x:Name="b3" Content="удалить" HorizontalAlignment="Left" Margin="131,321,0,0" VerticalAlignment="Top" Click="b3_Click"/>
+                    <Button x:Name="b2" Content="изменить" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Click="b2_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Таблица3" Loaded="Window_Loaded3">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="grid3" Margin="0,0,0,90"/>
+                    <Button x:Name="c1" Content="добавить" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Click="c1_Click"/>
+                    <Button x:Name="c3" Content="удалить" HorizontalAlignment="Left" Margin="131,321,0,0" VerticalAlignment="Top" Click="c3_Click"/>
+                    <Button x:Name="c2" Content="изменить" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Click="c2_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Таблица4" Loaded="Window_Loaded4">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="grid4" Margin="0,0,0,90"/>
+                    <Button x:Name="d1" Content="добавить" HorizontalAlignment="Left" Margin="10,321,0,0" VerticalAlignment="Top" Click="d1_Click"/>
+                    <Button x:Name="d3" Content="удалить" HorizontalAlignment="Left" Margin="131,321,0,0" VerticalAlignment="Top" Click="d3_Click"/>
+                    <Button x:Name="d2" Content="изменить" HorizontalAlignment="Left" Margin="70,321,0,0" VerticalAlignment="Top" Click="d2_Click"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

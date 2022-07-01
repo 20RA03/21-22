@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище mydatabase1ModelContainer" CdmEntityContainer="mydatabase1Entities">
+    <EntitySetMapping Name="Автомобили">
+      <EntityTypeMapping TypeName="mydatabase1Model.Автомобили">
+        <MappingFragment StoreEntitySet="Автомобили">
+          <ScalarProperty Name="Государственный_номер" ColumnName="Государственный номер" />
+          <ScalarProperty Name="Марка_автомобиля" ColumnName="Марка автомобиля" />
+          <ScalarProperty Name="Код_группы" ColumnName="Код группы" />
+          <ScalarProperty Name="Первоначальная_стоимость" ColumnName="Первоначальная стоимость" />
+          <ScalarProperty Name="Дата_ввода_в_эксплуатацию" ColumnName="Дата ввода в эксплуатацию" />
+          <ScalarProperty Name="Пробег_на_начало_года" ColumnName="Пробег на начало года" />
+          <ScalarProperty Name="Стоимость_автомобиля_на_начало_года" ColumnName="Стоимость автомобиля на начало года" />
+          <ScalarProperty Name="Табельный_номер_материально_ответственного_лица" ColumnName="Табельный номер материально ответственного лица" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Группа_автомобилей">
+      <EntityTypeMapping TypeName="mydatabase1Model.Группа_автомобилей">
+        <MappingFragment StoreEntitySet="Группа автомобилей">
+          <ScalarProperty Name="Код_группы" ColumnName="Код группы" />
+          <ScalarProperty Name="Наименование_группы" ColumnName="Наименование группы" />
+          <ScalarProperty Name="Норма_амортизации" ColumnName="Норма амортизации" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Месячные_пробеги">
+      <EntityTypeMapping TypeName="mydatabase1Model.Месячные_пробеги">
+        <MappingFragment StoreEntitySet="Месячные пробеги">
+          <ScalarProperty Name="Государственный_номер" ColumnName="Государственный номер" />
+          <ScalarProperty Name="Пробег" ColumnName="Пробег" />
+          <ScalarProperty Name="Номер_месяца" ColumnName="Номер месяца" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="МОЛ">
+      <EntityTypeMapping TypeName="mydatabase1Model.МОЛ">
+        <MappingFragment StoreEntitySet="МОЛ">
+          <ScalarProperty Name="Табельный_номер" ColumnName="Табельный номер" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="телефон" ColumnName="телефон" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
